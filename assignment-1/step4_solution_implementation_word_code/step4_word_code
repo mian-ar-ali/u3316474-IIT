@@ -1,0 +1,24 @@
+STEP 4 – Implementing the Solution (Word Coding)
+1.	System Initialization
+•	Turn system ON.
+2.	Feeding Time Check
+•	If F-TIME = FALSE, then wait until F-TIME = TRUE.
+•	If F-TIME = TRUE, proceed to next step.
+3.	Food Level Check
+•	If F-LEVEL = FALSE (i.e., food level ≤ 15 cm), then:
+•	Set DISPENSE = FALSE.
+•	Send ALERT_F-LEVEL: "Food Level low. Please fill tank."
+•	Wait for next F-TIME = TRUE.
+•	Else if F-LEVEL = TRUE (food level is sufficient):
+•	Set DISPENSE = TRUE.
+•	Activate servo motor to dispense food.
+4.	Wait Period
+•	Wait for 10 minutes.
+5.	Food Bowl Weight Check
+•	If F-WEIGHT = FALSE (i.e., weight ≤ 150g), then:
+•	Send ALERT_F-WEIGHT: "Pet didn't eat sufficient amount of food. Pet monitoring advised."
+•	Else:
+•	Proceed.
+6.	Auto-Off Check
+•	If AUTO-OFF = TRUE, then turn system OFF.
+•	Else, wait for next F-TIME = TRUE.
